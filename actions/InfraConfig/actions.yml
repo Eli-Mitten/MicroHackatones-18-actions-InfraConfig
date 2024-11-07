@@ -1,0 +1,6 @@
+name: "InfraConfig Docker Action"
+description: "Lauches a eco command in a docker container"
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
