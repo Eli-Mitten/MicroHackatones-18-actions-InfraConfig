@@ -1,7 +1,11 @@
-FROM alpine:latest
+FROM alpine:3.14
 
-# Instalación opcional de herramientas o configuración adicional si es necesario
-# RUN apk add --no-cache curl 
+# Install curl
+RUN apk add --no-cache curl
 
-# Command para ejecutar la action
-CMD echo "Ejecutando tests"
+# Create a test script
+COPY test-script.sh /test-script.sh
+RUN chmod +x /test-script.sh
+
+# Run the script
+CMD /test-script.sh
